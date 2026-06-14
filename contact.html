@@ -1,0 +1,358 @@
+[11:46 AM, 6/14/2026] GS Enterprise: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Global Operations - Ray Logistics</title>
+    <style>
+        :root { 
+            --brand-orange: #e07a22; 
+            --brand-orange-hover: #c96715;
+            --brand-dark: #232223;   /* Deeper premium dark background */
+            --card-bg: #2d2b2c;      /* Contrast panel gray */
+            --text-muted: #a5a4a5;
+            --border-color: #3f3d3e;
+        }
+        
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        }
+        
+        body { 
+            backgr…
+[11:57 AM, 6/14/2026] GS Enterprise: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Ray Logistics</title>
+    <style>
+        :root { 
+            --brand-orange: #e07a22; 
+            --brand-dark: #373536;    /* Premium background color from your brand flyer */
+            --light-bg: #f8f9fa;
+        }
+        
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        }
+        
+        body { 
+            background-color: var(--brand-dark); 
+            color: #ffffff; 
+            line-height: 1.6; 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* HIGH-VISIBILITY NAVIGATION HEADER */
+        header { 
+            background: #ffffff; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+
+        .navbar { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 15px 20px; 
+        }
+
+        .logo { 
+            display: flex; 
+            align-items: center; 
+            text-decoration: none; 
+            color: var(--brand-dark);
+        }
+
+        .logo img { 
+            height: 50px; 
+            width: auto;
+            margin-right: 12px; 
+        }
+
+        .logo-text-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--brand-dark);
+            line-height: 1.2;
+        }
+
+        .logo-subtitle {
+            font-size: 10px;
+            color: var(--brand-orange);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .nav-links { 
+            display: flex; 
+            list-style: none; 
+            gap: 25px; 
+        }
+
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--brand-dark); 
+            font-weight: 600; 
+            padding: 8px 12px; 
+            font-size: 16px;
+            transition: all 0.3s ease; 
+        }
+
+        .nav-links a:hover, .nav-links a.active { 
+            color: var(--brand-orange); 
+            border-bottom: 3px solid var(--brand-orange);
+        }
+
+        /* CONTACT MAIN CONTAINER */
+        .main-container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+            flex: 1;
+            width: 100%;
+        }
+
+        .page-title-box {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-title-box h1 {
+            font-size: 40px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .page-title-box p {
+            font-size: 20px;
+            color: var(--brand-orange);
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        /* TWO-COLUMN GRID (Form on left, Details on right) */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        /* BRIGHT WHITE FORM CARD FOR VISIBILITY */
+        .contact-form-card {
+            background-color: #ffffff;
+            color: var(--brand-dark);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .contact-form-card h2 {
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: var(--brand-dark);
+            border-bottom: 3px solid var(--brand-orange);
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--brand-dark);
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 16px;
+            color: var(--brand-dark);
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--brand-orange);
+            box-shadow: 0 0 8px rgba(224, 122, 34, 0.15);
+        }
+
+        .btn-send {
+            display: inline-block;
+            width: 100%;
+            background-color: var(--brand-orange);
+            color: #ffffff;
+            border: none;
+            padding: 14px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn-send:hover {
+            background-color: #c96715;
+        }
+
+        /* BRIGHT INFO CARD (Matches your physical flyer details perfectly) */
+        .info-details-card {
+            background-color: #ffffff;
+            color: var(--brand-dark);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-top: 6px solid var(--brand-orange);
+        }
+
+        .info-details-card h2 {
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: var(--brand-orange);
+        }
+
+        .info-block {
+            margin-bottom: 30px;
+        }
+
+        .info-block h3 {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #777777;
+            margin-bottom: 5px;
+        }
+
+        .info-block p {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--brand-dark);
+        }
+
+        .info-block a {
+            color: var(--brand-dark);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            display: block;
+            transition: color 0.2s;
+        }
+
+        .info-block a:hover {
+            color: var(--brand-orange);
+        }
+
+        /* GLOBAL FOOTER */
+        footer { 
+            background: #2b2a2b; 
+            color: #aaaaaa; 
+            text-align: center; 
+            padding: 25px 20px; 
+            margin-top: auto;
+            font-size: 14px;
+            border-top: 1px solid #444;
+        }
+
+        /* RESPONSIVE LAYOUT */
+        @media (max-width: 768px) { 
+            .navbar { flex-direction: column; gap: 20px; text-align: center; } 
+            .contact-grid { grid-template-columns: 1fr; }
+            .page-title-box h1 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HIGH-VISIBILITY NAVIGATION HEADER -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Ray Logistics Brand Logo">
+                <div class="logo-text-wrapper">
+                    <span class="logo-title">Ray Logistics</span>
+                    <span class="logo-subtitle">Fast and Reliable</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tracking.html">Track Shipment</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENT WRAPPER -->
+    <div class="main-container">
+        
+        <div class="page-title-box">
+            <h1>Contact Ray Logistics</h1>
+            <p>Let's Move Your Business Forward</p>
+        </div>
+
+        <div class="contact-grid">
+            
+            <!-- LEFT COLUMN: INPUT INQUIRY FORM -->
+            <section class="contact-form-card">
+                <h2>Send a Message</h2>
+                <form id="contact-form" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="name@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message / Delivery Request</label>
+                        <textarea id="message" rows="5" placeholder="How can we help your logistics needs today?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-send">Send Message</button>
+                </form>
+            </section>
+
+            <!-- RIGHT COLUMN: PHYSICAL DETAILS FROM FLYER -->
+            <aside class="info-details-card">
+                <h2>Corporate Channels</h2>
+                
+                <div class="info-block">
+                    <h3>📞 Call Priority Support</h3>
+                    <a href="tel:+2348169513809">+234 816 951 3809</a>
+                    <a href="tel:+2347059417642">+234 705 941 7642</a>
+                </div>
+
+                <div class="info-block">
+                    <h3>📍 Physical Headquarters</h3>
+                    <p>Shop 12, Esigie Barracks Shopping complex, Along First east Circular Road, Benin city.</p>
+                </div>
+
+                <div class="info-block">
+                    <h3>⚡ Core Operational Motto</h3>

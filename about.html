@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Profile Architecture | Ray Logistics</title>
+    <style>
+        :root { --brand-orange: #f48120; --brand-dark: #1a191a; --card-bg: #242324; --text-muted: #a6a6a6; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background-color: var(--brand-dark); color: #ffffff; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+        
+        header { background: rgba(26, 25, 26, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+        .navbar { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 18px 24px; }
+        .logo { display: flex; align-items: center; text-decoration: none; }
+        .logo img { height: 52px; margin-right: 14px; }
+        .logo-title { font-size: 24px; font-weight: 800; color: #ffffff; letter-spacing: -0.5px; text-transform: uppercase; }
+        .logo-subtitle { font-size: 10px; color: var(--brand-orange); text-transform: uppercase; letter-spacing: 2px; font-weight: 700; }
+        .nav-links { display: flex; list-style: none; gap: 30px; }
+        .nav-links a { text-decoration: none; color: #cccccc; font-weight: 600; padding: 8px 0; font-size: 15px; }
+        .nav-links a:hover, .nav-links a.active { color: #ffffff; }
+
+        .container { max-width: 1200px; margin: 60px auto; padding: 0 24px; flex: 1; }
+        .section-title { font-size: 48px; font-weight: 900; margin-bottom: 40px; letter-spacing: -1.5px; text-align: center; }
+        
+        .grid-profile { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 20px; }
+        .profile-card { background: var(--card-bg); padding: 45px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.04); box-shadow: 0 20px 40px rgba(0,0,0,0.25); }
+        .profile-card h3 { font-size: 26px; margin-bottom: 18px; font-weight: 700; color: #ffffff; border-left: 4px solid var(--brand-orange); padding-left: 15px; }
+        .profile-card p { color: var(--text-muted); font-size: 16px; margin-bottom: 15px; line-height: 1.7; }
+        
+        .pillars-list { list-style: none; margin-top: 20px; }
+        .pillars-list li { margin-bottom: 15px; padding-left: 30px; position: relative; color: var(--text-muted); }
+        .pillars-list li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--brand-orange); font-weight: bold; font-size: 18px; }
+        .pillars-list li strong { color: white; }
+
+        footer { background: #111011; color: #777777; text-align: center; padding: 30px 24px; font-size: 14px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        @media(max-width:992px){.navbar{flex-direction:column;gap:15px;}.grid-profile{grid-template-columns:1fr;}}
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Ray Logistics Brand Logo">
+                <div style="display: flex; flex-direction: column;">
+                    <span class="logo-title">Ray Logistics</span>
+                    <span class="logo-subtitle">Fast & Reliable</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tracking.html">Track Shipment</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Corporate Profile</h2>
+        <div class="grid-profile">
+            <div class="profile-card">
+                <h3>Global Operations Architecture</h3>
+                <p>Ray Logistics is a premier multi-modal transportation group built to answer high-intensity shipping constraints with absolute procedural velocity. We solve supply chain structural bottlenecks across domestic routes and international corridors effortlessly.</p>
+                <p>Leveraging high-end computational tracking framework software alongside specialized vehicle deployment strategies, we sustain asset protection seamlessly for global enterprises.</p>
+            </div>
+            <div class="profile-card">
+                <h3>Our Core Strategic Mandate</h3>
+                <p>We believe in building unbreakable structural trust milestones with our consumer networks through premium route performance metrics.</p>
+                <ul class="pillars-list">
+                    <li><strong>Guaranteed Velocity:</strong> Optimized logistics route matching to remove handling lane delay points.</li>
+                    <li><strong>Absolute Safe-Guard Protocols:</strong> Comprehensive cargo insurance handling oversight processes for high-asset manifests.</li>
+                    <li><strong>Continuous Visibility Infrastructure:</strong> Deep server transparency keeping customer nodes accurately advised.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Ray Logistics. Fast. Reliable. Global. Built For Enterprise Performance.</p>
+    </footer>
+
+</body>
+</html>

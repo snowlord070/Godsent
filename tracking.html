@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Tracking Gateway | Ray Logistics</title>
+    <style>
+        :root { --brand-orange: #f48120; --brand-dark: #1a191a; --card-bg: #242324; --text-muted: #a6a6a6; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background-color: var(--brand-dark); color: #ffffff; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+        
+        /* Glassmorphic Navbar duplicated across pages */
+        header { background: rgba(26, 25, 26, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+        .navbar { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 18px 24px; }
+        .logo { display: flex; align-items: center; text-decoration: none; }
+        .logo img { height: 52px; margin-right: 14px; }
+        .logo-title { font-size: 24px; font-weight: 800; color: #ffffff; letter-spacing: -0.5px; text-transform: uppercase; }
+        .logo-subtitle { font-size: 10px; color: var(--brand-orange); text-transform: uppercase; letter-spacing: 2px; font-weight: 700; }
+        .nav-links { display: flex; list-style: none; gap: 30px; }
+        .nav-links a { text-decoration: none; color: #cccccc; font-weight: 600; padding: 8px 0; font-size: 15px; }
+        .nav-links a:hover, .nav-links a.active { color: #ffffff; }
+
+        .container { max-width: 1200px; margin: 60px auto; padding: 0 24px; flex: 1; width: 100%; }
+        .section-header { text-align: center; margin-bottom: 40px; }
+        .section-header h2 { font-size: 42px; font-weight: 800; margin-bottom: 10px; letter-spacing: -1px; }
+        .section-header p { color: var(--text-muted); font-size: 18px; }
+
+        .tracking-card { 
+            background: var(--card-bg); 
+            padding: 50px 40px; 
+            border-radius: 16px; 
+            max-width: 700px; 
+            margin: 0 auto; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3); 
+            border: 1px solid rgba(255,255,255,0.04);
+        }
+        .tracking-card h3 { font-size: 22px; margin-bottom: 20px; font-weight: 700; letter-spacing: -0.5px; }
+        
+        .search-engine { display: flex; gap: 12px; margin-top: 20px; }
+        .search-engine input { 
+            flex: 1; 
+            padding: 18px 20px; 
+            background: #121112;
+            border: 1px solid rgba(255,255,255,0.1); 
+            border-radius: 8px; 
+            font-size: 16px; 
+            color: white;
+            transition: all 0.3s;
+        }
+        .search-engine input:focus { border-color: var(--brand-orange); outline: none; box-shadow: 0 0 10px rgba(244,129,32,0.2); }
+        
+        .btn-search { background: var(--brand-orange); color: white; padding: 0 35px; border: none; border-radius: 8px; font-weight: 700; font-size: 16px; cursor: pointer; transition: all 0.3s; }
+        .btn-search:hover { background: #d66a10; }
+
+        /* Highly Styled Progress Tracking Output Box */
+        .tracking-result-panel { 
+            margin-top: 40px; 
+            padding: 30px; 
+            border-radius: 10px;
+            background: #1d1c1d;
+            border-left: 5px solid var(--brand-orange); 
+            display: none; 
+            animation: slideUp 0.4s ease;
+        }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+        .status-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 15px; margin-bottom: 15px; }
+        .status-badge { background: rgba(244,129,32,0.15); color: var(--brand-orange); padding: 6px 16px; border-radius: 20px; font-weight: 700; font-size: 14px; text-transform: uppercase; }
+        .data-row { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 15px; }
+        .data-row span.label { color: var(--text-muted); }
+
+        footer { background: #111011; color: #777777; text-align: center; padding: 30px 24px; font-size: 14px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        @media(max-width:768px){.navbar{flex-direction:column;gap:15px;}.search-engine{flex-direction:column;}.btn-search{padding:16px;}}
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Ray Logistics Brand Logo">
+                <div style="display: flex; flex-direction: column;">
+                    <span class="logo-title">Ray Logistics</span>
+                    <span class="logo-subtitle">Fast & Reliable</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tracking.html" class="active">Track Shipment</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="section-header">
+            <h2>Consignment Tracker System</h2>
+            <p>Access absolute tracking visibility checkpoints globally in real-time.</p>
+        </div>
+        
+        <div class="tracking-card">
+            <h3>Secure Tracking Number Entry</h3>
+            <div class="search-engine">
+                <input type="text" id="tracking-id" placeholder="Enter Consignment ID (e.g. RAY-5982-NG)">
+                <button class="btn-search" onclick="processTracking()">Query Core Server</button>
+            </div>
+
+            <div id="tracking-result-box" class="tracking-result-panel">
+                <div class="status-header">
+                    <h4>Tracking Live Insights</h4>
+                    <span class="status-badge" id="res-status">In Transit</span>
+                </div>
+                <div class="data-row"><span class="label">Manifest Reference</span><span id="res-id" style="font-weight:700;">---</span></div>
+                <div class="data-row"><span class="label">Current Location Status</span><span>Regional Operational Hub Depot (Benin City)</span></div>
+                <div class="data-row"><span class="label">Dispatch Milestones</span><span>Cleared Hub Sorting Channels</span></div>
+                <div class="data-row"><span class="label">Estimated Delivery Slate</span><span style="color: var(--brand-orange); font-weight:700;">Priority Express Delivery Schedule</span></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Ray Logistics. Fast. Reliable. Global. Built For Enterprise Performance.</p>
+    </footer>
+
+    <script>
+        function processTracking() {
+            const trackInput = document.getElementById('tracking-id').value.trim();
+            const resultBox = document.getElementById('tracking-result-box');
+            const resIdLabel = document.getElementById('res-id');
+
+            if(trackInput === "") {
+                alert("Please enter a valid tracking key reference first.");
+                return;
+            }
+            resIdLabel.innerText = trackInput.toUpperCase();
+            resultBox.style.display = "block";
+        }
+    </script>
+</body>
+</html>
